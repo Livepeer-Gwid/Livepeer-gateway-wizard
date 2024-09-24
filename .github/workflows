@@ -1,0 +1,29 @@
+name: Semgrep Code Quality Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Semgrep
+        run: |
+          python install semgrep
+
+      - name: Run Semgrep
+        run: |
+          semgrep --config auto --error --exclude tests/
+
