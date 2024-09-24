@@ -26,4 +26,3 @@ jobs:
       - name: Run Semgrep
         run: |
           semgrep --config auto --error --exclude tests/
-
