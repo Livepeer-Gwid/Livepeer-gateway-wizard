@@ -21,7 +21,7 @@ jobs:
 
       - name: Install Semgrep
         run: |
-          python install semgrep
+          pip install semgrep
 
       - name: Run Semgrep
         run: |
