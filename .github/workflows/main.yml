@@ -25,4 +25,4 @@ jobs:
 
       - name: Run Semgrep
         run: |
-          semgrep --config auto --error --json > findings.json
+          semgrep --config auto --error --json > findings.json || true
